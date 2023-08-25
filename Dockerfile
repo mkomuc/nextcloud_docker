@@ -18,5 +18,5 @@ RUN apt-get update && \
 RUN curl https://gist.githubusercontent.com/pulsejet/4d81c1356703b2c8ba19c1ca9e6f6e50/raw/qsv-docker.sh | bash
 
 
-COPY start.sh /
+COPY --chmod=0755 start.sh /
 CMD /start.sh

@@ -2,8 +2,8 @@ FROM nextcloud:apache
 #RUN apt-get update \
 # && apt-get install smbclient
 
-RUN apt-get update \
- && apt -y install libmagickcore-6.q16-6-extra graphicsmagick lsb-release \
+RUN DEBIAN_FRONTEND=noninteractive apt-get update \
+ && apt -y install keyboard-configuration libmagickcore-6.q16-6-extra graphicsmagick lsb-release \
     && echo "deb http://ftp.debian.org/debian $(lsb_release -cs) non-free" >> \
        /etc/apt/sources.list.d/intel-graphics.list && \
     apt-get update && \

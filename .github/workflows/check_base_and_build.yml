@@ -47,4 +47,4 @@ jobs:
           context: .
           push: true
           tags: mkomuc/nextcloud:latest
-        if: steps.check.outputs.needs-updating == 'true'
+        #if: steps.check.outputs.needs-updating == 'true'

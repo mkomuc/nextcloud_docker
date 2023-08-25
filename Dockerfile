@@ -3,11 +3,11 @@ FROM nextcloud:apache
 # && apt-get install smbclient
 
 RUN apt-get update \
- && apt -y install libmagickcore-6.q16-6-extra smbclient iputils-ping nmap mc btop net-tools ncdu java-common default-jre graphicsmagick ffmpeg ghostscript lsb-release \
+ && apt -y install libmagickcore-6.q16-6-extra graphicsmagick lsb-release \
     && echo "deb http://ftp.debian.org/debian $(lsb_release -cs) non-free" >> \
        /etc/apt/sources.list.d/intel-graphics.list && \
     apt-get update && \
-    apt-get install -y intel-media-va-driver-non-free ffmpeg && \
+    apt-get install -y intel-media-va-driver-non-free && \
     rm -rf /var/lib/apt/lists/*
 
 # Enable QSV support

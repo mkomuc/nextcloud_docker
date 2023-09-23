@@ -1,4 +1,5 @@
-FROM nextcloud:apache
+FROM nextcloud:latest
+#FROM nextcloud:apache
 #RUN apt-get update \
 # && apt-get install smbclient
 

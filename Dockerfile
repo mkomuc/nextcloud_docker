@@ -1,13 +1,14 @@
 FROM nextcloud:latest
 
-RUN echo "deb http://ftp.debian.org/debian $(lsb_release -cs) non-free" >> \
+RUN DEBIAN_FRONTEND=noninteractive apt-get update \
+ && apt-get install -y --no-install-recommends lsb-release \
+ && echo "deb http://ftp.debian.org/debian $(lsb_release -cs) non-free" >> \
     /etc/apt/sources.list.d/intel-graphics.list \
  && DEBIAN_FRONTEND=noninteractive apt-get update \
- && apt-get install -y \
+ && apt-get install -y --no-install-recommends \
     keyboard-configuration \
     libmagickcore-6.q16-6-extra \
     graphicsmagick \
-    lsb-release \
     intel-media-va-driver-non-free \
     sudo \
     curl \
